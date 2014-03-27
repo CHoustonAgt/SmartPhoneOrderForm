@@ -1,0 +1,68 @@
+<?php
+/*
+Programming Assignment 4
+Charles Houston
+PHP 1 Spring 2014
+*/
+
+function newPhone($phone, $model, $storage, $price) {
+	echo '<tr>
+			<form>
+				<td><input type="radio" name="phone"></td>
+				<td>' . $phone . '</td>
+				<td>' . $model . '</td>
+				<td align="center">' . $storage . '</td>
+				<td>' . $price . '</td>
+			</form>
+		</tr>';
+}
+function newAccessory($name, $description, $price) {
+	echo '<tr>
+			<form>
+				<td><input type="checkbox" name="' . $name . '"></td>
+				<td>' . $description . '</td>
+				<td>' . $price . '</td>
+			</form>
+		</tr>';
+}
+?>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Smart Phone Order Form</title>
+</head>
+<body>
+	<div align="center";>
+		<h1>Order Your Smart Phone</h1>
+		<form>
+			Name:<input type="textbox" name="name">
+		</form>
+		<table>
+			<tr>
+				<th></th>
+				<th>Phone</th>
+				<th>Model</th>
+				<th>Storage Option</th>
+				<th>Price</th>
+			</tr>
+			<?php
+				newPhone("SuperPhone", "SP8", "8 GB", "$400");
+				newPhone("SuperPhone", "SP16", "16 GB", "$450");
+				newPhone("MegaPhone", "MP8", "8 GB", "$500");
+				newPhone("MegaPhone", "MP16", "16 GB", "$550");
+			?>
+		</table>
+		<h2>Add Accessories</h2>
+		<table>	
+			<?php
+				newAccessory("handstrap", "Hand Strap", "$6.25");
+				newAccessory("leathercase", "Leather Case", "$14.50");
+				newAccessory("headphones", "Headphones", "$18.75");
+			?>
+		</table>
+		<form>
+			<p><input type="submit" name="submit" value="Click to Finalize Order"></p>
+		</form>
+	</div>
+</body>
+</html>
